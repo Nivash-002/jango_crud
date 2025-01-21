@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container_newtable">
+  <form method="POST">
+    {% csrf_token %}
+    {% for error in form.non_field_errors %}
+      <div class="alert alert-danger">
+        <span class='text-danger'>{{error}}</span>
+      </div>
+    {% endfor %}
+    <div>
+      <label for="id_name">Name:</label>
+      {{ form.Name }}
+      {% if form.Name.errors %}
+      <span class='text-danger'>{{form.Name.errors}}</span>
+      {% endif %}
+    </div>
+    <div>
+      <label for="id_date">Age:</label>
+      {{ form.Age }}
+      {% if form.Age.errors %}
+      <span class='text-danger'>{{form.Age.errors}}</span>
+      {% endif %}
+    </div>
+    <div>
+      <label for="id_email">Email:</label>
+      {{ form.Email }}
+      {% if form.Email.errors %}
+      <span class='text-danger'>{{form.Email.errors}}</span>
+      {% endif %}
+    </div>
+    <div>
+      <label for="id_degree">Degree:</label>
+      {{ form.Degree }}
+      {% if form.Degree.errors %}
+      <span class='text-danger'>{{form.Degree.errors}}</span>
+      {% endif %}
+    </div>
+    <div>
+      <label for="id_passed_out">Passed Out:</label>
+      {{ form.Passed_out }}
+      {% if form.Passed_out.errors %}
+      <span class='text-danger'>{{form.Passed_out.errors}}</span>
+      {% endif %}
+    </div>
+    <button class='btn btn-primary' type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

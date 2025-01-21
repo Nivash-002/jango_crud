@@ -1,0 +1,81 @@
+{% extends "base.html" %} {% block content %}
+<style>
+  form {
+    max-width: 500px;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    background-color: rgb(22, 41, 117);
+    padding-right: 40px;
+  }
+  body {
+    background: rgb(2, 41, 200);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 41, 200, 1) 0%,
+      rgba(2, 41, 200, 1) 15%,
+      rgba(2, 41, 200, 1) 20%,
+      rgba(1, 12, 130, 1) 100%
+    );
+  }
+  div {
+    margin-bottom: 1em;
+  }
+  label {
+    display: block;
+    color: white;
+    font-weight: bold;
+  }
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+  }
+  button {
+    padding: 0.7em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+<div class="container_newtable">
+  <form action="/update/{{ mydatas.id }}" method="POST">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ mydatas.Name }}" />
+    {% if errors.name %}
+    <p style="color: red">{{ errors.name }}</p>
+    {% endif %}
+    <label for="age">Age:</label>
+    <input type="num" id="age" name="age" value="{{ mydatas.Age }}" />
+    {% if errors.age %}
+    <p style="color: red">{{ errors.age }}</p>
+    {% endif %} 
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="{{ mydatas.Email }}" />
+    {% if errors.email %}
+    <p style="color: red">{{ errors.email }}</p>
+    {% endif %}
+    <label for="degree">Degree:</label>
+    <input type="text" id="degree" name="degree" value="{{ mydatas.Degree }}" />
+    {% if errors.degree %}
+    <p style="color: red">{{ errors.degree }}</p>
+    {% endif %}
+    <label for="passed_out">Passed Out Year:</label>
+    <input type="text" id="passed_out" name="passed_out" value="{{ mydatas.Passed_out }}"/>
+    {% if errors.passed_out %}
+    <p style="color: red">{{ errors.passed_out}}</p>
+    {% endif %}
+    <button type="submit">Update</button>
+  </form>
+</div>
+{% endblock %}

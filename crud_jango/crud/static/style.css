@@ -1,0 +1,42 @@
+h1{
+    background-color: red;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+}
+div {
+    margin-bottom: 1em;
+}
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+}
+button {
+    padding: 0.7em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+
+}
+a{
+    background-color: rgb(44, 146, 44);
+}

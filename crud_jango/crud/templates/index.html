@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block  content %}
+<style>
+    
+    .create{
+        background-color:rgb(44, 146, 44);
+        text-decoration: none;
+        padding: 10px;
+        border-radius:5px;
+        color:black;
+        display:block;
+        max-width: 500px;
+        margin: auto;
+        margin-bottom:15px;
+        text-align:center;
+        font-weight:bold;
+        font-size:20px;
+    }
+    .create:hover{
+        background-color:rgb(44, 136, 24);
+    }
+    table{
+    max-width: 500px;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+}
+</style>
+<a class='create' href='create'>create</a>
+{% if datas %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>EMAIL</th>
+            <th>DEGREE</th>
+            <th>PASSED OUT</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+    </thead>
+    {% for mydatas in datas %}
+    <tbody>
+        <tr>
+            <td >{{forloop.counter}}</td>
+            <td>{{mydatas.Name}}</td>
+            <td>{{mydatas.Age}}</td>
+            <td>{{mydatas.Email}}</td>
+            <td>{{mydatas.Degree}}</td>
+            <td>{{mydatas.Passed_out}}</td>
+            <td align="center"><a class='btn btn-primary' href='update/{{mydatas.id}}'> update </a></td>
+            <td align="center"><a class='btn btn-danger' href='delete/{{mydatas.id}}'> delete </a></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}
