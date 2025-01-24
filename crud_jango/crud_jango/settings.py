@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-v25y1nbp%i#&&sd(h_3jt^$ac=c=s*$9sxa%^zs5#git-29tnw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
-# Application definition
+# Application definition pip install gunicorn whitenoise
 
 INSTALLED_APPS = [
     'django.contrib.admin',
