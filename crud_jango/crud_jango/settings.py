@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-v25y1nbp%i#&&sd(h_3jt^$ac=c=s*$9sxa%^zs5#git-29tnw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['crud1.onrender.com', 'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition pip install gunicorn whitenoise
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'crud_jango.urls'
@@ -87,7 +88,7 @@ DATABASES = {
 }
 
 
-# Password validation
+# Password validation  https://github.com/Nivash-002/jango_crud.git
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -130,3 +131,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
